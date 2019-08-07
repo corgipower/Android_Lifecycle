@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
         listAdapter = ImageListAdapter(imageList, this)
         layout_list.adapter = listAdapter
 
+
+        Log.i("Main", "onCreate")
     }
 
     private fun refreshListView() {
@@ -85,5 +87,35 @@ class MainActivity : AppCompatActivity() {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Main", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Main", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Main", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Main", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Main", "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Main", "onRestart")
     }
 }

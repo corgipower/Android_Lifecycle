@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
@@ -32,6 +33,7 @@ class DetailsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        Log.i("Details", "onCreate")
     }
 
     override fun onStart() {
@@ -44,6 +46,8 @@ class DetailsActivity : AppCompatActivity() {
         text_uri.text = data?.fileUri.toString()
         text_description.text = data?.description
         edit_description.setText(data?.description)
+
+        Log.i("Details", "onStart")
     }
 
     override fun onBackPressed() {
@@ -53,5 +57,30 @@ class DetailsActivity : AppCompatActivity() {
         resultIntent.putExtra("object", data)
         setResult(Activity.RESULT_OK, resultIntent)
         finish()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Details", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Details", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Details", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Details", "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Details", "onRestart")
     }
 }

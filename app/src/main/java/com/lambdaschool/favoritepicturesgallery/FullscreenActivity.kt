@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -75,6 +76,8 @@ class FullscreenActivity : AppCompatActivity() {
 
         val intent = intent
         (mContentView as ImageView).setImageURI(Uri.parse(intent.getStringExtra("image")))
+
+        Log.i("full", "onCreate")
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -144,5 +147,35 @@ class FullscreenActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("full", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("full", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("full", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("full", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("full", "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("full", "onRestart")
     }
 }
